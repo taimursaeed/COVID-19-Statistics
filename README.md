@@ -1,1 +1,1 @@
-A small jQuery app to display current COVID-19 cases around the world
+A small jQuery app that displays current COVID-19 cases around the world
