@@ -118,7 +118,9 @@ select {
     display: grid;
     grid-template-rows: 70% 30%;
     height: 160px;
-
+    @media (max-width: 768px) {
+      height: 140px;
+    }
     &.blue {
       color: #1687ed;
       background: lighten(#1687ed, 45%);
