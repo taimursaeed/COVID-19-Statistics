@@ -1,34 +1,38 @@
+var worldwide = true;
+
 $(document).ready(function() {
-  var nurl;
-  var worldwide = false;
+  showData("https://thevirustracker.com/free-api?global=stats");
   $("#country").on("change", function() {
     worldwide = false;
     $(this).val() == "ALL"
-      ? ((nurl = "https://thevirustracker.com/free-api?global=stats"),
-        (worldwide = true))
-      : (nurl =
-          "https://thevirustracker.com/free-api?countryTotal=" + $(this).val());
-
-    $.ajax({
-      url: nurl,
-      dataType: "json",
-      beforeSend: function() {
-        $(".count").hide();
-        $(".loader").show();
-      },
-      success: function(data) {
-        $("#total div,#new div").each(function() {
-          var text;
-          worldwide
-            ? (text = data.results[0][$(this)[0].id])
-            : (text = data["countrydata"][0][$(this)[0].id]);
-          $(this)
-            .find(".count")
-            .text(text);
-        });
-        $(".loader").hide();
-        $(".count").show();
-      }
-    });
+      ? ((worldwide = true),
+        showData("https://thevirustracker.com/free-api?global=stats"))
+      : showData(
+          "https://thevirustracker.com/free-api?countryTotal=" + $(this).val()
+        );
   });
 });
+
+function showData(url) {
+  $.ajax({
+    url: url,
+    dataType: "json",
+    beforeSend: function() {
+      $(".count").hide();
+      $(".loader").show();
+    },
+    success: function(data) {
+      $("#total div,#new div").each(function() {
+        var text;
+        worldwide
+          ? (text = data.results[0][$(this)[0].id])
+          : (text = data["countrydata"][0][$(this)[0].id]);
+        $(this)
+          .find(".count")
+          .text(text);
+      });
+      $(".loader").hide();
+      $(".count").show();
+    }
+  });
+}
