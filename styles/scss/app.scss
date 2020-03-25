@@ -106,6 +106,9 @@ select {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .card {
     // box-shadow: 0 3px 8px #cecece;
     border-radius: 1rem;
