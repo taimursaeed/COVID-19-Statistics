@@ -18,8 +18,10 @@ function showData(url) {
     url: url,
     dataType: "json",
     beforeSend: function() {
-      $(".count").hide();
       $(".loader").show();
+      $(".count").hide();
+      $(".loader").addClass("animate");
+      $(".count").removeClass("animate");
     },
     success: function(data) {
       $("#total>div,#new>div").each(function() {
@@ -33,6 +35,8 @@ function showData(url) {
       });
       $(".loader").hide();
       $(".count").show();
+      $(".loader").removeClass("animate");
+      $(".count").addClass("animate");
     }
   });
 }
