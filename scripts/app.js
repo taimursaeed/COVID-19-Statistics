@@ -22,11 +22,11 @@ function showData(url) {
       $(".loader").show();
     },
     success: function(data) {
-      $("#total div,#new div").each(function() {
+      $("#total>div,#new>div").each(function() {
         var text;
         worldwide
-          ? (text = data.results[0][$(this)[0].id])
-          : (text = data["countrydata"][0][$(this)[0].id]);
+          ? (text = data.results[0][$(this)[0].id].toLocaleString())
+          : (text = data["countrydata"][0][$(this)[0].id].toLocaleString());
         $(this)
           .find(".count")
           .text(text);
