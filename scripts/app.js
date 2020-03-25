@@ -17,7 +17,6 @@ $(document).ready(function() {
         $(".loader").show();
       },
       success: function(data) {
-        console.log(data);
         $("#total div,#new div").each(function() {
           var text;
           worldwide

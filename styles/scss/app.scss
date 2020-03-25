@@ -25,6 +25,9 @@
 }
 html {
   font-size: 20px;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 }
 body {
   background: #fff;
@@ -67,12 +70,15 @@ select {
   grid-gap: 1rem;
   align-items: self-start;
   @media (max-width: 768px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 100%;
   }
 
   .right {
     padding: 1rem 2rem;
     text-align: center;
+    @media (max-width: 768px) {
+      padding: 1rem 0;
+    }
   }
   .left {
     background-color: #fafafa;
@@ -145,7 +151,7 @@ select {
   }
 }
 svg {
-  width: 300px;
+  max-width: 300px;
 }
 .attribution {
   font-size: 0.7rem;
