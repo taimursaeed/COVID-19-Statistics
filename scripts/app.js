@@ -1,15 +1,32 @@
-var worldwide = true;
+var worldwide = false;
+var url = new URL(document.location);
+var params = url.searchParams;
+var countryID = params.get("country");
+countryID &&
+$("#country option[value=" + countryID.toUpperCase() + "]").length > 0
+  ? (countryID = countryID.toUpperCase())
+  : (countryID = "WW");
 
 $(document).ready(function() {
-  showData("https://thevirustracker.com/free-api?global=stats");
+  $("#country").val(countryID);
+  countryID == "WW"
+    ? ((worldwide = true),
+      showData("https://thevirustracker.com/free-api?global=stats"))
+    : showData(
+        "https://thevirustracker.com/free-api?countryTotal=" + countryID
+      );
+
   $("#country").on("change", function() {
     worldwide = false;
-    $(this).val() == "ALL"
+    var selectedValue = $(this).val();
+    selectedValue == "WW"
       ? ((worldwide = true),
         showData("https://thevirustracker.com/free-api?global=stats"))
       : showData(
-          "https://thevirustracker.com/free-api?countryTotal=" + $(this).val()
+          "https://thevirustracker.com/free-api?countryTotal=" + selectedValue
         );
+    params.set("country", selectedValue);
+    window.history.replaceState({}, "", `?country=${selectedValue}`);
   });
 });
 
@@ -24,6 +41,7 @@ function showData(url) {
       $(".count").removeClass("animate");
     },
     success: function(data) {
+      // debugger;
       $("#total>div,#new>div").each(function() {
         var text;
         worldwide
