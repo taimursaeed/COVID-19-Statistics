@@ -169,14 +169,47 @@ svg {
 }
 .parent {
   transform-origin: 66px 56px;
-  animation: spin 120s infinite;
+  animation: spin 200s infinite;
 }
-
+.child1 {
+  animation: child1 10s 2s alternate infinite;
+}
+.child2 {
+  animation: child2 5s alternate infinite;
+}
+.child3 {
+  animation: child3 10s alternate infinite;
+  transform-origin: center center;
+}
 @keyframes spin {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes child1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(27px, -20px);
+  }
+}
+@keyframes child2 {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+@keyframes child3 {
+  0% {
+    transform: translateY(-10px) rotate(50deg);
+  }
+  100% {
+    transform: translateY(20px) rotate(0deg);
   }
 }
