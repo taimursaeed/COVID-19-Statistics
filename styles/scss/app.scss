@@ -1,0 +1,171 @@
+@import "./_normalize.scss";
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Inter Regular"), local("Inter-Regular"),
+    url("../../fonts/Inter-Regular.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../../fonts/Inter-Regular.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../../fonts/Inter-Regular.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  src: local("Inter Black"), local("Inter-Black"),
+    url("../../fonts/Inter-Black.woff2") format("woff2"),
+    /* Super Modern Browsers */ url("../../fonts/Inter-Black.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../../fonts/Inter-Black.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-display: swap;
+}
+html {
+  font-size: 20px;
+}
+body {
+  background: #fff;
+  padding: 0;
+  font-family: "Inter";
+  max-width: 1200px;
+  padding: 1rem;
+  margin: auto;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 1.5rem 0;
+}
+h2 {
+  margin-top: 3rem;
+}
+h3 {
+  font-size: 2rem;
+}
+
+select {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  border-radius: 2rem;
+  padding: 0 1.5rem;
+  height: 3rem;
+  line-height: 3rem;
+  background: white
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30.715' height='16.303' viewBox='0 0 30.715 16.303'%3E%3Cpath fill='%23707070' d='M-999.551,780.435h0a1.536,1.536,0,0,0-2.17,0l-12.692,12.692a3.068,3.068,0,0,0,0,4.34l12.784,12.784a1.534,1.534,0,0,0,2.155.015h0a1.533,1.533,0,0,0,.015-2.185l-11.7-11.7a1.533,1.533,0,0,1,0-2.17l11.605-11.605A1.537,1.537,0,0,0-999.551,780.435Z' transform='translate(-779.986 -999.009) rotate(-90)'/%3E%3C/svg%3E")
+    95% center / 18px 18px no-repeat;
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-gap: 1rem;
+  align-items: self-start;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+  .left {
+    background-color: #fafafa;
+    background-color: #ffe600;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+
+    // box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3),
+    //   0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  }
+}
+.loader {
+  border: 2px solid #ffffff;
+  border-top: 2px solid #000000;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+  display: inline-block;
+  margin: 1rem 0;
+}
+
+.card-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  .card {
+    // box-shadow: 0 3px 8px #cecece;
+    border-radius: 1rem;
+    text-align: center;
+    color: white;
+    border: 1px solid transparent;
+    display: grid;
+    grid-template-rows: 70% 30%;
+    height: 160px;
+
+    &.blue {
+      color: #1687ed;
+      background: lighten(#1687ed, 45%);
+      border-color: lighten(#1687ed, 15%);
+      .loader {
+        border-color: #99d0ff;
+        border-top-color: #1687ed;
+      }
+    }
+    &.red {
+      color: #ff0000;
+      background: lighten(#ff0000, 45%);
+      border-color: lighten(#ff0000, 25%);
+      .loader {
+        border-color: #ff9696;
+        border-top-color: #ff0000;
+      }
+    }
+    &.green {
+      color: #007e08;
+      background: lighten(#007e08, 65%);
+      border-color: lighten(#007e08, 15%);
+      .loader {
+        border-color: #75cc7d;
+        border-top-color: #007e08;
+      }
+    }
+    > * {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+svg {
+  width: 300px;
+}
+.attribution {
+  font-size: 0.7rem;
+  margin: 0.2rem;
+  a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+}
+.parent {
+  transform-origin: 66px 56px;
+  animation: spin 120s infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
