@@ -249,3 +249,10 @@ Counties ID's are as follows:
 |YE|Yemen|
 |ZM|Zambia|
 |ZW|Zimbabwe|
+
+
+### Data
+Data from https://thevirustracker.com/api
+
+## Contribute
+Please feel free to contribute pull requests or create issues for bugs and feature requests.
