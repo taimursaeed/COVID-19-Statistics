@@ -1,6 +1,9 @@
 
-## A small jQuery app that displays current COVID-19 cases around the world
+# A small jQuery app that displays current COVID-19 cases around the world
 ![Preview](https://user-images.githubusercontent.com/17146817/77623513-06d01600-6f62-11ea-8754-73fedcae8866.png)
+
+## Demo
+https://taimursaeed.github.io/COVID-19-Statistics/
 
 Select the country from the list to view information. 
 
