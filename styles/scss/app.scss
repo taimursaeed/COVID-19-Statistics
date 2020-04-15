@@ -34,7 +34,7 @@ body {
   background: #fff;
   padding: 0;
   font-family: "Inter";
-  max-width: 1200px;
+  max-width: 1300px;
   padding: 1rem;
   margin: auto;
 }
@@ -83,19 +83,16 @@ select {
 
 .container {
   display: grid;
-  grid-template-columns: 40% 60%;
-  grid-gap: 1rem;
+  grid-template-columns: 40% 55%;
+  grid-gap: 5%;
   align-items: self-start;
   @media (max-width: 768px) {
     grid-template-columns: 100%;
   }
 
   .right {
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
-    @media (max-width: 768px) {
-      padding: 1rem 0;
-    }
   }
   .left {
     background-color: #fafafa;
