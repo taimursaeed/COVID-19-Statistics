@@ -51,9 +51,9 @@ h2 {
 }
 h3 {
   font-size: 1.8rem;
-  transform: translateY(8px);
+  transform: translateY(10px);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   &.animate {
     opacity: 1;
     transform: translateY(0);
