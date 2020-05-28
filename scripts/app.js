@@ -25,6 +25,12 @@ $(document).ready(function () {
     params.set("country", selectedValue);
     window.history.replaceState({}, "", `?country=${selectedValue}`);
   });
+  var delay = 0.1;
+  $(".has-animation").each(function () {
+    $(this).css("transition-delay", delay + "s");
+    $(this).removeClass("has-animation");
+    delay += 0.1;
+  });
 });
 
 function showData(url) {
@@ -46,7 +52,6 @@ function showData(url) {
       $(".count").removeClass("animate");
     },
     success: function (data) {
-      // debugger;
       $("#total>div,#new>div").each(function () {
         var text;
         worldwide
