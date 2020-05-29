@@ -33,7 +33,7 @@ html {
 body {
   background: #fff;
   padding: 0;
-  font-family: "Inter",sans-serif;
+  font-family: "Inter", sans-serif;
   max-width: 1300px;
   padding: 1rem;
   margin: auto;
@@ -195,6 +195,7 @@ select {
 }
 svg {
   max-width: 300px;
+  overflow: visible;
 }
 .attribution {
   font-size: 0.7rem;
