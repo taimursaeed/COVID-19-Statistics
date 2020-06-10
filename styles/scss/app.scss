@@ -1,28 +1,5 @@
 @import "./_normalize.scss";
 
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  src: local("Inter Regular"), local("Inter-Regular"),
-    url("../../fonts/Inter-Regular.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("../../fonts/Inter-Regular.woff")
-      format("woff"),
-    /* Modern Browsers */ url("../../fonts/Inter-Regular.ttf")
-      format("truetype"); /* Safari, Android, iOS */
-  font-display: swap;
-}
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 900;
-  src: local("Inter Black"), local("Inter-Black"),
-    url("../../fonts/Inter-Black.woff2") format("woff2"),
-    /* Super Modern Browsers */ url("../../fonts/Inter-Black.woff")
-      format("woff"),
-    /* Modern Browsers */ url("../../fonts/Inter-Black.ttf") format("truetype"); /* Safari, Android, iOS */
-  font-display: swap;
-}
 html {
   font-size: 20px;
   overflow-x: hidden;
@@ -109,7 +86,7 @@ select {
   }
   .left {
     background-color: #fafafa;
-    background-color: #ffe600;
+    background-color: #ffc800;
     border-radius: 2rem;
     padding: 2rem;
     text-align: center;
