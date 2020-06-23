@@ -44,6 +44,9 @@ h3 {
   }
   @media screen and (max-width: 767.98px) {
     font-size: 1.6rem;
+  } 
+   @media screen and (max-width: 320px) {
+    font-size: 1.4rem;
   }
 }
 
@@ -113,7 +116,7 @@ select {
 
 .card-wrap {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(217px, 217px));
   grid-gap: 1rem;
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
